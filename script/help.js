@@ -79,26 +79,26 @@ module.exports.run = async function ({
 			let page = 1;
 			let start = (page - 1) * pages;
 			let end = start + pages;
-			let helpMessage = `𝗛𝗔𝗖𝗞𝗔𝗜𝗔[🌐]⮕𝗕𝗢𝗧 ☪\n\n`;
+			let helpMessage = `CMDS LIST\n\n`;
 			for (let i = start; i < Math.min(end, commands.length); i++) {
-				helpMessage += `\n ☪${i + 1}  ✦ ${prefix}${commands[i]}\n`;
+				helpMessage += `\n 🏷️${i + 1}  🐓 ${prefix}${commands[i]}\n`;
 			}
-			helpMessage += '\n𝗘𝗩𝗘𝗡𝗗 𝗖𝗠𝗗 𝗟𝗜𝗦𝗧 [📑]\n━━━━━━━━━━━\n';
+			helpMessage += '\n EVENT CMDS [📑]\n━━━━━━━━━━━\n';
 			eventCommands.forEach((eventCommand, index) => {
-				helpMessage += ` ☪ ${index + 1} ✦  ${prefix}${eventCommand}\n`;
+				helpMessage += ` 🏷️ ${index + 1} 🐓  ${prefix}${eventCommand}\n`;
 			});
-			helpMessage += `\n\n  𝗣𝗚𝗔𝗘 [💬] ${page}/${Math.ceil(commands.length / pages)} \n━━━━━━━━━━━\n 𝗛𝗖𝗞𝗔𝗜 [🌐] ⮕𝗕𝗢𝗧 ✦ 𝗖𝗥𝗘𝗔𝗧𝗘 𝗕𝗬 : 𝗣𝗛𝗔𝗥𝗢𝗨𝗞 ✦ 𝗙𝗕 𝗟𝗜𝗡𝗞 :https://www.facebook.com/more.sidibe.1?mibextid=JRoKGi \n━━━━━━━━━━━\n 𝗔𝗨𝗧𝗢𝗕𝗢𝗧 ⮕𝗟𝗜𝗡𝗞✦:https://hackay.onrender.com '.`;
+			helpMessage += `\n\n  PAGE [💬] ${page}/${Math.ceil(commands.length / pages)} \n━━━━━━━━━━━\n 𝗛𝗖𝗞𝗔𝗜 [🌐] ⮕𝗕𝗢𝗧 ✦ 𝗖𝗥𝗘𝗔𝗧𝗘 𝗕𝗬 : 𝗣𝗛𝗔𝗥𝗢𝗨𝗞 ✦ 𝗙𝗕 𝗟𝗜𝗡𝗞 :https://www.facebook.com/more.sidibe.1?mibextid=JRoKGi \n━━━━━━━━━━━\n 𝗔𝗨𝗧𝗢𝗕𝗢𝗧 ⮕𝗟𝗜𝗡𝗞✦:https://hackay.onrender.com '.`;
 			api.sendMessage(helpMessage, event.threadID, event.messageID);
 		} else if (!isNaN(input)) {
 			const page = parseInt(input);
 			const pages = 100;
 			let start = (page - 1) * pages;
 			let end = start + pages;
-			let helpMessage = `𝗛𝗔𝗖𝗞𝗔𝗜 [🌐]⮕ 𝗕𝗢𝗧✦:\n\n`;
+			let helpMessage = `CMDS LIST:\n\n`;
 			for (let i = start; i < Math.min(end, commands.length); i++) {
-				helpMessage += `\t${i + 1}. ☪ ${prefix}${commands[i]} ✦\n`;
+				helpMessage += `\t${i + 1}. 🏷️ ${prefix}${commands[i]} 🐓\n`;
 			}
-			helpMessage += '\n 𝗕𝗢𝗧 [📑] :\n\n';
+			helpMessage += '\n EVENT CMDS [📑] :\n\n';
 			eventCommands.forEach((eventCommand, index) => {
 				helpMessage += `\t${index + 1}. ☪ ${prefix}${eventCommand} ✦\n`;
 			});
